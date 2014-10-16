@@ -1,0 +1,13 @@
+.idea
+*.iml
+*.class
+.DS_Store
+*.swp
+*~
+#*
+.rsync-filter
+JLSerror
+*.jls
+/bin/
+/JLS.jar
+

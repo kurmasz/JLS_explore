@@ -1,0 +1,29 @@
+<project name="JLS" basedir="." default="dist">
+
+  <target name="compilexz" description="compile xz">
+    <javac srcdir="xz" destdir="bin" debug="on"/>
+  </target>
+
+
+  <target name="compile" description="compile source" depends="compilexz">
+    <javac srcdir="src" destdir="bin" debug="on" classpath="lib/jhall.jar"/>
+  </target>
+
+
+  <target name="dist" depends="compile">
+    <jar destfile="JLS.jar">
+      <fileset dir="src"/>
+      <fileset dir="bin"/>
+      <manifest>
+	<attribute name="Main-Class" value="jls.JLS"/>
+      </manifest>
+    </jar>
+  </target>
+  
+  <target name="clean">
+    <delete>
+      <fileset dir="bin"/>
+    </delete>
+    <delete file="JLS.jar"/>
+  </target>
+</project>
